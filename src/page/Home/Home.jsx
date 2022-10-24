@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Home() {
     const [data, setData] = useState(0);
@@ -14,8 +14,21 @@ function Home() {
         }
     ]
 
+    useEffect(() => {
+        console.log(data);
+
+        //Cuando el componente se destruye
+        // return () => {
+        //     console.log('se marcho');
+        // }
+
+       //arreglo de dependencia (Vienen del estado)
+       //Nota: si no se le pone nada, solo se ejecuta una vez (al iniciar)
+       //Nota: si se le agrega, Se ejecuta cada vez que cambia.
+    }, [data]);
+
 const handleClick = () => {
-    setData(10); 
+    setData(data + 1); 
 };
 
   return (
