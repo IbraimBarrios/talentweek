@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MagicCount from "./components/magicCount/MagicCount";
-import MagicArray from "./components/magicArray/MagicArray";
+import { MagicArray, MagicCount } from "./components";
 
 function Home() {
   return (
